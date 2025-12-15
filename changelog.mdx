@@ -1,0 +1,129 @@
+---
+title: Changelog
+description: A record of updates and improvements to Janek Unon.
+---
+
+## Overview
+
+Stay updated with the latest enhancements, bug fixes, and improvements to Janek Unon. You review this changelog to understand new features and plan your upgrades. Each release includes detailed changes grouped by category.
+
+<Columns cols={3}>
+  <Card title="Latest Release" icon="zap" href="#v2-0-0">
+    Discover what's new in v2.0.0.
+  </Card>
+  <Card title="Upgrade Guide" icon="download" href="#upgrading">
+    Follow steps to update your installation.
+  </Card>
+  <Card title="Report Issues" icon="github" href="https://github.com/janek-unon/issues" target="_blank">
+    Found a bug? Open an issue.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Check the tags on each release: `feature` for new capabilities, `bugfix` for fixes, `improvement` for enhancements, and `breaking` for major changes.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-11-05" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## Breaking Changes
+
+- Updated configuration schema. Migrate your `config.json` to the new format.
+
+## New Features
+
+- Added real-time collaboration support for shared documents.
+- Introduced plugin system for custom integrations.
+
+## Improvements
+
+- Enhanced performance with lazy loading for large datasets.
+- Improved UI responsiveness on mobile devices.
+
+</Update>
+
+<Update label="2024-10-15" description="v1.5.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Dashboard analytics with export to CSV and PDF.
+- API rate limiting configurable per endpoint.
+
+## Bug Fixes
+
+- Fixed authentication token refresh loop.
+- Resolved file upload failures on slow networks.
+
+</Update>
+
+<Update label="2024-09-01" description="v1.4.0" tags={["improvement", "bugfix"]}>
+
+## Improvements
+
+- Optimized database queries reducing load time by 40%.
+- Added keyboard shortcuts for common actions.
+
+## Bug Fixes
+
+- Corrected search indexing for non-Latin characters.
+- Patched security vulnerability in user session handling.
+
+</Update>
+
+## Upgrading
+
+Follow these steps to upgrade Janek Unon to the latest version. You back up your data first to avoid issues.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export your configurations and databases:
+    
+    ```bash
+    janek-unon backup --output=/path/to/backup
+    ```
+  </Step>
+  <Step title="Update Package" icon="package">
+    Install the latest version using your package manager.
+  </Step>
+  <Step title="Run Migrations" icon="git-pull-request">
+    Apply database migrations:
+    
+    ```bash
+    janek-unon migrate
+    ```
+  </Step>
+  <Step title="Restart Service" icon="refresh-cw">
+    Restart your Janek Unon instance and verify functionality.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    <CodeGroup tabs="Update,Verify">
+      ```bash
+      npm update janek-unon
+      ```
+      ```bash
+      npm list janek-unon
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Docker" icon="docker">
+    Pull the latest image and redeploy:
+    
+    ```bash
+    docker pull janekunon/latest
+    docker-compose up -d
+    ```
+  </Tab>
+  <Tab title="Yarn" icon="package">
+    ```bash
+    yarn upgrade janek-unon@latest
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Full Release History" default-open="false">
+  View older releases on the [GitHub releases page](https://github.com/janek-unon/releases).
+</Expandable>

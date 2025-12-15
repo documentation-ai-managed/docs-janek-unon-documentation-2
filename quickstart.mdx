@@ -1,0 +1,134 @@
+---
+title: Getting Started with Janek Unon
+description: A step-by-step guide to set up your first documentation space and begin creating content.
+---
+
+## Overview
+
+Janek Unon helps you create organized documentation spaces for your projects. Follow these steps to sign up, configure your first space, and publish your initial document. You complete the setup in under 5 minutes.
+
+<Callout kind="tip">
+  Use your brand color `#3B82F6` in custom themes for a consistent look across your docs.
+</Callout>
+
+## Create Your Account
+
+Start by signing up for a free account.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Open your browser and navigate to `https://app.janek-unon.com`.
+
+    Click **Sign Up** in the top right corner.
+  </Step>
+
+  <Step title="Enter Details" icon="user">
+    Provide your email, create a strong password, and verify your account via email.
+
+    <Callout kind="info">
+      Enable two-factor authentication immediately for security.
+    </Callout>
+  </Step>
+
+  <Step title="Complete Onboarding" icon="check-circle">
+    Select your workspace type (personal or team) and skip optional integrations for now.
+  </Step>
+</Steps>
+
+## Initial Space Setup
+
+After logging in, create your first documentation space.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    Click **New Space** from the dashboard.
+
+    Name it `My Project Docs` and set visibility to public or private.
+  </Step>
+
+  <Step title="Configure Settings" icon="settings">
+    In space settings, add your brand color `#3B82F6` under **Theme**.
+
+    Enable features like search and analytics.
+  </Step>
+</Steps>
+
+## Create Your First Document
+
+Publish a quickstart page to test your space.
+
+<Tabs>
+  <Tab title="Web Editor" icon="edit-3">
+    <Steps>
+      <Step title="Add Page" icon="file-plus">
+        Select **New Page** > **quickstart.mdx**.
+
+        Use the built-in editor to add content.
+      </Step>
+
+      <Step title="Add Frontmatter" icon="code">
+        Insert YAML frontmatter at the top:
+
+````mdx
+```yaml
+---
+title: My Quickstart
+description: First document example.
+---
+```
+````
+
+      </Step>
+
+      <Step title="Preview & Publish" icon="eye">
+        Click **Preview** to check rendering, then **Publish**.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="CLI Upload" icon="terminal">
+    Install the CLI and upload from your terminal.
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm install -g @janek-unon/cli
+```
+```bash
+yarn global add @janek-unon/cli
+```
+    </CodeGroup>
+
+    Authenticate and upload:
+
+````bash
+janek login
+janek space upload ./my-docs/ --space="My Project Docs"
+````
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Customize Themes" icon="palette" href="/docs/themes">
+    Apply custom CSS and your brand color `#3B82F6`.
+  </Card>
+
+  <Card title="Add Integrations" icon="plug" href="/docs/integrations">
+    Connect GitHub for version control.
+  </Card>
+
+  <Card title="Team Collaboration" icon="users" href="/docs/collaboration">
+    Invite members and set permissions.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Publish fails?** Check your space permissions.
+  - **MDX errors?** Validate YAML frontmatter with no extra spaces.
+  - **Slow previews?** Clear browser cache and retry.
+</Expandable>
+
+Your documentation space is now live! Share the URL with your team.
